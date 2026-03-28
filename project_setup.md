@@ -7,10 +7,10 @@ This version is not mandatory - other versions may be used if required by the pr
 ## Virtual Environment
 
 To prevent package conflicts, **always create a separate virtual environment** for each project.  
-We use **`pip`** for dependency management, as it is simpler and better suited for our workflow than `conda`.
+For supercomputing we use **`pip`** for dependency management and `uv` for private workstations.
 
-Every project **must include** a `requirements.txt` file listing all required packages.  
-The Python version used in the project should also be specified - either in the project’s `README.md` or in a `.python-version` file (read more about `.python-version` file [here](https://pydevtools.com/handbook/explanation/what-is-a-python-version-file/)).
+Every project **must include** a `requirements.txt`/  `pyproject.toml` file listing all required packages.  
+The Python version used in the project should also be specified - either in the project’s `README.md` or in a `.python-version` file (read more about `.python-version` file [here](https://pydevtools.com/handbook/explanation/what-is-a-python-version-file/)). Best practice is to use `uv lock` & `uv sync` for better reproducibility.
 
 ## First-Time setup instructions
 
@@ -22,7 +22,7 @@ This helps new contributors quickly set up their environment and ensures a consi
 ```md
 ## First time setup
 
-Use python3.11.
+Use python 3.11.
 
 To setup project, run following commands:
 
@@ -34,12 +34,13 @@ pip install -r requirements.txt
 ## .gitignore
 
 It’s essential to **exclude the virtual environment** from git.
-
 You can do this in one of two ways:
 
 1. Add the virtual environment folder (e.g., `venv/`) to your project’s `.gitignore` file.
 2. Or, create a `.gitignore` file inside the virtual environment folder with the following content:
     `*`
+> [!CAUTION]
+> Remember to add **.env** to .gitignore
 
 ### Example structure:
 ``` (folders structure)
@@ -75,7 +76,7 @@ Each Python project repository should include the following files at the root:
 
 ```
 .gitignore
-requirements.txt
+requirements.txt / pyproject.toml
 README.md (with python version specified)
 
 .python-version (optional)

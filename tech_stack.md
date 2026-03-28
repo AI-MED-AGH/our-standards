@@ -12,7 +12,7 @@ We basically use python version `3.11`, as it provides the best compatibility wi
 
 We primarily use [`uv`](https://docs.astral.sh/uv/) for managing local Python packages and virtual environments, as it tends to cause fewer compatibility issues. Thanks to `uv.lock` we are able to reproduce environment with exactly same version of environment between users.
 
-[`Pip`](https://pip.pypa.io/en/stable/) is used for managing computations environment  on HPC systems, where prepared modules with its optimized environments and performance benefits are particularly valuable.
+[`Pip`](https://pip.pypa.io/en/stable/) is used for managing computations environment on HPC systems, where prepared modules with its optimized environments and performance benefits are particularly valuable.
 ## Python packages
 
 - **numpy** - For CPU-based matrix operations.
